@@ -1,0 +1,25 @@
+#installation of splunk server
+1: go to the splunk website:- https://www.splunk.com/en_us/download/splunk-enterprise.html
+
+2: sign up to splunk to download the splunk software
+
+3: Choose the installation package according to your system (either for window or linux or mac OS) # if you are installing over cloud instance be secure that your instance have minimum  available storage more than 5GiB        
+
+4: you can download directly from there or they also give a download url, copy that url and  and download from that 
+command to download from url :-- wget -O splunk-9.0.4.1-419ad9369127-linux-2.6-x86_64.rpm "https://download.splunk.com/products/splunk/releases/9.0.4.1/linux/splunk-9.0.4.1-419ad9369127-linux-2.6-x86_64.rpm"
+
+5: install splunk software : #software name download from url = splunk-9.0.4.1-419ad9369127-linux-2.6-x86_64.rpm 
+command :-- rpm -ivh splunk-9.0.4.1-419ad9369127-linux-2.6-x86_64.rpm    
+
+6: after install they give a folder (splunk folder for configuration) i.e. folder_name = "/opt/splunk" 
+
+7: to use splunk we need a user & password to login form the webUI 
+    create user :--
+    cd /opt/splunk/bin/ (go to this directory to create user)
+    ./splunk status (cmd to check the status of splunk is running or not)
+    ./splunk  (cmd to create the user for first time , the ask user-name and password to create a user)
+    after the user create, start the splunk service :-- ./splunk start (cmd to start the splunk server)
+    splunk is a program that run on some port number , port number=8000 but we can change it also from conf file
+ 
+ 8: use the public ip to connect to connect if run on cloud
+   url:-- http://pub_ip:8000
